@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Why Vue used Proxy</title>
+	<style>
+		*,
+		*::after,
+		*::before{
+			text-decoration: none;
+		}
+		.wrap{
+			margin: 0 auto;
+		}
+	</style>
+</head>
+<body>
+<div>
+	<h1>defineProperty</h1>
+	<div>
+		<img src="definProperty.png" alt="">
+	</div>
+	<p>
+	<h1>Step!</h1>	
+	1. click console obj
+	<br>
+	2. change value of obj.a
+	<br>
+	3. click console obj
+	<br>
+	4. change value of obj.b
+	</p>
+	<button class="addObjb">add obj.b</button>
+	<button class="consoleObj">console obj</button>
+	<h2>
+		<a href="index.html">Go back to HomePage!</a>
+	</h2>
+	<h2>
+		<a href="proxy.html">look Proxy!</a>
+	</h2>
+</div>
+</body>
+<script>
+
+const addObjb = document.querySelector('.addObjb');
+const consoleObj = document.querySelector('.consoleObj');
+
+var obj = {};
+
+// being explicit
+var aValue = 38;
+Object.defineProperty(obj, 'a', {
+  get: ()=>{ console.log("balabalabala...") },
+  set: ()=>{ console.log("you got this") },
+  enumerable: false,
+  configurable: false,
+  // writable: false
+});
+
+addObjb.addEventListener('click',
+	()=>{
+		window.obj.b = 'banana!'
+	}
+)
+
+consoleObj.addEventListener('click',
+	()=>{
+		console.log(window.obj)
+	}
+)
+
+</script>
+</html>
