@@ -8,4 +8,4 @@ I think it is really helpful to you, If you're rookie in Modern Web.
 Please see this [video](https://www.youtube.com/watch?v=qQnTwfp7Fko).
 
 ## Demo
-[link](https://ianchen0119.github.io/How-deffirent-between-defineProperty-and-Proxy/)
+[link](https://ianchen0119.github.io/What-deffirent-between-defineProperty-and-Proxy/)
